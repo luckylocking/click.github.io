@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        #cat {
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.1s ease-in-out;
+        }
+
+        #counter {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="cat" src="444-removebg-preview.png" alt="貓咪" onclick="clickCat()">
+    <div id="counter">點擊次數: 0</div>
+
+    <script>
+        let count = 0;
+        function clickCat() {
+            const cat = document.getElementById("cat");
+            const counter = document.getElementById("counter");
+            cat.src = "555-removebg-preview.png";
+            cat.style.transform = "scale(1.1)";
+            setTimeout(() => {
+                cat.src = "444-removebg-preview.png";
+                cat.style.transform = "scale(1)";
+            }, 100);
+            count++;
+            counter.innerText = `點擊次數: ${count}`;
+        }
+    </script>
+</body>
+
+</html>
